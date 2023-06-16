@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hanchaoyang.ol.DefaultOperationLogConfig,\
+com.hanchaoyang.ol.OperationLogAspect,\
+com.hanchaoyang.ol.SpringUtil
