@@ -2,6 +2,7 @@
 
 # 使用文档
 1. 引入依赖
+> 项目开发中，依赖尚未上传至中央仓库
 2. 创建配置类
 ```java
 package com.example.demo.config;
