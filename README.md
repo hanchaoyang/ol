@@ -17,14 +17,15 @@ public class OperationLogConfig {
 
     @Bean
     public OperationLogFilter operationLogFilter() {
-        // 根据执行方法、参数、返回结果来判断是否需要保存该条操作日志
+        // 根据执行方法、参数、返回结果来判断是否需要保存该条操作日志，以下为示例
         return (method, args, result) -> result.getCode() == 200;
     }
 
     @Bean
     public OperationLogCollector operationLogCollector() {
         return content -> {
-            // 保存日志
+            // 保存日志的方法，以下为示例
+            // this.operationLogService.save(conrent);
         };
     }
 
