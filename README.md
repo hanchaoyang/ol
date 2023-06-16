@@ -45,9 +45,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping("/demo")
-    // #now为内置的当前时间
-    // @demoService.getNameById()为DemoService内的根据ID查询名称的方法
-    // #id为方法参数
+    // #now为内置的当前时间，@demoService.getNameById()为DemoService内的查询名称的方法，#id为方法参数
     @OperationLog("#now + ' 用户' + @demoService.getNameById(#id) + '登录系统'")
     public String demo(@RequestParam Long id) {
         return "ok";
