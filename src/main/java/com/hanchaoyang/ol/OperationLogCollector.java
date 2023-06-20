@@ -8,6 +8,6 @@ package com.hanchaoyang.ol;
  */
 public interface OperationLogCollector {
 
-    void collect(String content);
+    void collect(OperationLogRecord record);
 
 }

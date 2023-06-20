@@ -22,7 +22,7 @@ public class DefaultOperationLogConfig {
     @Bean
     @ConditionalOnMissingBean
     public OperationLogCollector operationLogCollector() {
-        return content -> {
+        return (record) -> {
 
         };
     }

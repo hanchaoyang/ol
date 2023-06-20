@@ -45,7 +45,11 @@ public class OperationLogAspect {
 
         Map<String, Object> args = this.getArgs(joinPoint);
 
+        long start = System.currentTimeMillis();
+
         Object result = joinPoint.proceed();
+
+        long end = System.currentTimeMillis();
 
         if (!this.filter.isCollectable(method, args, result)) {
             return result;
@@ -61,7 +65,9 @@ public class OperationLogAspect {
 
         String content = parser.parseExpression(operationLog.value()).getValue(evaluationContext, String.class);
 
-        this.collector.collect(content);
+        OperationLogRecord record = new OperationLogRecord(LocalDateTime.now(), content, end - start);
+
+        this.collector.collect(record);
 
         return result;
     }
