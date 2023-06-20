@@ -65,7 +65,7 @@ public class OperationLogAspect {
 
         String content = parser.parseExpression(operationLog.value()).getValue(evaluationContext, String.class);
 
-        OperationLogRecord record = new OperationLogRecord(LocalDateTime.now(), content, end - start);
+        OperationLogRecord record = new OperationLogRecord((LocalDateTime) evaluationContext.lookupVariable("now"), content, end - start);
 
         this.collector.collect(record);
 
